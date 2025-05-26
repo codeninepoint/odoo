@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_society_dashboard" model="ir.ui.view">
+        <field name="name">esociety.dashboard.tree</field>
+        <field name="model">stock.location</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <!-- <field name="domain">['|',('is_society','=',True)]</field> -->
+                <field name="society_id"/>
+            </list>
+        </field>
+    </record>
+    <menuitem id="menu_society_management_root" name="Society Management"/>
+    <menuitem id ="menu_esociety_master" name = "Master Files" parent = "menu_society_management_root"/>
+</odoo>

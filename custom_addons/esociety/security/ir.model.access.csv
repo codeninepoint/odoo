@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+esociety.access_esociety_member,access_esociety_member,esociety.model_esociety_member,base.group_user,1,0,0,0
+access_esociety_member,access_esociety_member,model_esociety_member,base.group_user,1,1,1,1
+access_stock_location_society,access_stock_location_society,model_stock_location,base.group_user,1,1,1,1

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_society_location_tree" model="ir.ui.view">
+        <field name="name">esociety.location.tree</field>
+        <field name="model">stock.location</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="is_society"/>
+                <field name="is_wing"/>
+                <field name="is_flat"/>
+                <field name="flat_number"/>
+                <field name="wing_id"/>
+                <field name="society_id"/>
+                <field name="society_partner_id"/>
+                <field name="flat_partner_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_society_location_form" model="ir.ui.view">
+        <field name="name">society.location.form</field>
+        <field name="model">stock.location</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="is_society"/>
+                        <field name="is_wing"/>
+                        <field name="is_flat"/>
+                        <field name="flat_number"/>
+                        <field name="society_id"/>
+                        <field name="wing_id"/>
+                        <field name="society_partner_id"/>
+                        <field name="flat_partner_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_society_locations" model="ir.actions.act_window">
+        <field name="name">Societies and Flats</field>
+        <field name="res_model">stock.location</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">['|',('is_society','=',True),('is_flat','=',True)]</field>
+        <field name="view_id" ref="view_society_location_tree"/>
+    </record>
+
+    <menuitem id="menu_society_locations" name="Societies and Flats" parent="menu_esociety_master" action="action_society_locations" sequence="1"/>
+</odoo>
